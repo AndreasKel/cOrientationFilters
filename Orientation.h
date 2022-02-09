@@ -1,11 +1,10 @@
-//Electrobird
-//Copyright(c) 2022 All Rights Reserved
+//Author: AndreasKel
 //---------------------------------------------------------------------------------------------
 //license:          MIT
-//file name:        xConfigIoSystem.st
+//file name:        Orientation.h
 //language:         C++
 //environment:      Mingw-w64
-//functionality:    filters to estimate orientation by calculating the corresponding quaternions
+//functionality:    filters to estimate orientation using quaternions
 //==============================================================================================
 
 #include "MatrixAlgebra.h"

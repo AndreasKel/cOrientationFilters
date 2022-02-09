@@ -1,14 +1,11 @@
-//SIEMENS AG / Industry Sector / Erlangen
-//(c)Copyright 2022 All Rights Reserved
-//------------------------------------------------------------------------------
-//file name:        xConfigIoSystem.st
-//library:          (that the source is dedicated to)
-//system:           SIMOTION D
-//version:          SIMOTION 5.1 and newer / SCOUT 5.1
-//restrictions:
-//requirements:     (hardware, technological package, memory needed, etc.)
-//functionality:    example for using LMachTail library
-//==============================================================================
+//Author: AndreasKel
+//---------------------------------------------------------------------------------------------
+//license:          MIT
+//file name:        Orientation.h
+//language:         C++
+//environment:      Mingw-w64
+//functionality:    filters to estimate orientation using quaternions
+//==============================================================================================
 
 #include "Orientation.h" 
 
