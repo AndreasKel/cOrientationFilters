@@ -1,7 +1,7 @@
 //Author: AndreasKel
 //---------------------------------------------------------------------------------------------
 //license:          MIT
-//file name:        Orientation.h
+//file name:        MatrixAlgebra.cpp
 //language:         C++
 //environment:      Mingw-w64
 //functionality:    matrix creation and algebra computation

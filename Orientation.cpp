@@ -1,7 +1,7 @@
 //Author: AndreasKel
 //---------------------------------------------------------------------------------------------
 //license:          MIT
-//file name:        Orientation.h
+//file name:        Orientation.cpp
 //language:         C++
 //environment:      Mingw-w64
 //functionality:    filters to estimate orientation using quaternions
