@@ -23,7 +23,7 @@ public:
     cMatrixAlgebra(short, short, float);
     cMatrixAlgebra(const vector<vector<float> > &initial);
     cMatrixAlgebra(const cMatrixAlgebra &mat);
-    cMatrixAlgebra() = default;
+    cMatrixAlgebra() :_rowSize(0), _colSize(0) {};
     ~cMatrixAlgebra();
     
     short getRows() const;

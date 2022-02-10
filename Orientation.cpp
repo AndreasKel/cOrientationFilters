@@ -65,7 +65,7 @@ cMatrixAlgebra cOrientation::setJacobianMatrix(float quatStatesOLD[], float refS
 
 //Multiplies 2 quaternions
 float* cOrientation::QuatMultiplication(float quaternion1[], float quaternion2[]){
-    static float quatfinal[4];
+    static float quatfinal[4]{0};
     quatfinal[0] = quaternion1[0] * quaternion2[0] - quaternion1[1] * quaternion2[1] - quaternion1[2] * quaternion2[2] - quaternion1[3] * quaternion2[3];
     quatfinal[1] = quaternion1[0] * quaternion2[1] + quaternion1[1] * quaternion2[0] + quaternion1[2] * quaternion2[3] - quaternion1[3] * quaternion2[2];
     quatfinal[2] = quaternion1[0] * quaternion2[2] - quaternion1[1] * quaternion2[3] + quaternion1[2] * quaternion2[0] + quaternion1[3] * quaternion2[1];
@@ -103,7 +103,7 @@ cOrientation::retQuatArray cOrientation::KalmanFilter(float accX, float accY, fl
     cMatrixAlgebra deltaQxk(4, 1 , 0.0f); 
     cMatrixAlgebra KGH(4, 4 , 0.0f);                                 
 
-    float QxkTemp[4];
+    float QxkTemp[4]{0};
     float Magnitude;                                                    //Magnitude to normalise a quaternion
     
 
@@ -214,7 +214,7 @@ cOrientation::retQuatArray cOrientation::KalmanFilter(float accX, float accY, fl
     };    
 
     //Return the final states
-    struct retQuatArray quatfinal;
+    struct retQuatArray quatfinal{0};
     quatfinal.qw =  Qxk[0][0];
     quatfinal.qx =  Qxk[1][0];
     quatfinal.qy =  Qxk[2][0];
@@ -239,7 +239,7 @@ cOrientation::retQuatArray cOrientation::KalmanFilterBias(float accX, float accY
             cMatrixAlgebra S_m(3, 3, 0.0f);
             cMatrixAlgebra deltaQxk(7, 1, 0.0f);
             cMatrixAlgebra KGH(7 , 7, 0.0f);
-            float QxkTemp[4];
+            float QxkTemp[4]{0};
 
             // Qxk = A*Qxk(previous) + B*U    Qxk: state matrix   U: gyro reading
              vector<vector<float>> A { //state transition model 
@@ -354,7 +354,7 @@ cOrientation::retQuatArray cOrientation::KalmanFilterBias(float accX, float accY
             };            
             //Pkp = Pkp_temp1._matrix;
             //Return the final states
-            struct retQuatArray quatfinal;
+            struct retQuatArray quatfinal{0};
             quatfinal.qw =  Qxk[0][0];
             quatfinal.qx =  Qxk[1][0];
             quatfinal.qy =  Qxk[2][0];
@@ -365,18 +365,18 @@ cOrientation::retQuatArray cOrientation::ComplementaryFilter(float accX, float a
   // temporary variables  
             float* QaccWorldTemp;                              
             float* QaccWorld;                                   //Rotated accelerometer values from gyro     
-            float Qtilt[4];
+            float Qtilt[4]{0};
             float* QcorrectedTemp;
-            float* Qcorrected;                                  //final corrected state
-            float quaternionDelta[4];                           //instantaneous rotation
+            float Qcorrected[4]{0};                             //final corrected state
+            float quaternionDelta[4]{0};                        //instantaneous rotation
             float* Qomega;                                      //rotation quaternion from gyro
             float theta;                                        //rotation of θ radians around an axis v
             float Qacc[4] { 0, accX, accY, accZ };              //quaternion from accelerometer readings
-            float quaternionInverse[4];                         //inverse of Q omega
-            float QaccNormalised[4];
-            float v[3];                                         //normalised rotation axis
+            float quaternionInverse[4]{0};                      //inverse of Q omega
+            float QaccNormalised[4]{0};
+            float v[3]{0};                                      //normalised rotation axis
             float phi;
-            float rot_axis[3];
+            float rot_axis[3]{0};
             
 
             //Calculating quaternion from gyro
@@ -436,7 +436,7 @@ cOrientation::retQuatArray cOrientation::ComplementaryFilter(float accX, float a
             Qxk[2][0] = Qcorrected[2];
             Qxk[3][0] = Qcorrected[3];
 
-            struct retQuatArray quatfinal;
+            struct retQuatArray quatfinal{0};
             quatfinal.qw =  Qxk[0][0];
             quatfinal.qx =  Qxk[1][0];
             quatfinal.qy =  Qxk[2][0];
